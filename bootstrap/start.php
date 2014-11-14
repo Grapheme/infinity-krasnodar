@@ -6,7 +6,8 @@ $env = $app->detectEnvironment(array(
 	'vkharseev' => array('DNS'),
     'kdurnev' => array('DobriyMac.local'),
     'az' => array('Acer_5742G'),
-    'autoprem' => array('ratio.timeweb.ru')
+    'autoprem' => array('ratio.timeweb.ru'),
+    'l24'=> array('l24')
 ));
 $app->bindInstallPaths(require __DIR__.'/paths.php');
 $framework = $app['path.base'].'/vendor/laravel/framework/src';
