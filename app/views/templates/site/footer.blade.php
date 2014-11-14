@@ -83,17 +83,14 @@
         </div>
         <div class="footer-right">
             <adress class="contact-block">
-                г.Краснодар,<br>
-                ул.Горячеключевская, 5
+                г. Краснодар,<br>
+                ул. Горячеключевская, 5
             </adress>
             <div class="contact-block">
-                <a href="tel:+78612001331" class="contact-link">+7 861-200-13-31</a><br>
-                <a href="mailto:Kr.infiniti@gedon.ru">Kr.infiniti@gedon.ru</a>
+                <a href="tel:+78612001331" class="contact-link">+7 (861) 200-13-31</a>
             </div>
             <div class="soc-icons">
                 <a href="https://www.facebook.com/infinitigedon" class="soc-link icon-fb"></a>
-                <a href="{{ link::to() }}" class="soc-link icon-vk"></a>
-                <a href="{{ link::to() }}" class="soc-link icon-in"></a>
             </div>
         </div>
         <div class="clearfix"></div>
