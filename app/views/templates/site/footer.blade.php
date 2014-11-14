@@ -83,16 +83,15 @@
         </div>
         <div class="footer-right">
             <adress class="contact-block">
-                346715, г. Ростовская обл.,<br>
-                Аксайский р-н, п. Янтарный,<br>
-                Новочеркасское шоссе, 16В
+                г.Краснодар,<br>
+                ул.Горячеключевская, 5
             </adress>
             <div class="contact-block">
-                <a href="tel:+78632928892" class="contact-link">+7 863-292-88-92</a><br>
-                <a href="tel:+78633050500" class="contact-link">+7 863 305-05-00</a>
+                <a href="tel:+78612001331" class="contact-link">+7 861-200-13-31</a><br>
+                <a href="mailto:Kr.infiniti@gedon.ru">Kr.infiniti@gedon.ru</a>
             </div>
             <div class="soc-icons">
-                <a href="{{ link::to() }}" class="soc-link icon-fb"></a>
+                <a href="https://www.facebook.com/infinitigedon" class="soc-link icon-fb"></a>
                 <a href="{{ link::to() }}" class="soc-link icon-vk"></a>
                 <a href="{{ link::to() }}" class="soc-link icon-in"></a>
             </div>
