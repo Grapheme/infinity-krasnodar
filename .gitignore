@@ -1,7 +1,7 @@
 .idea
-#/vendor
-#composer.phar
-#composer.lock
+/vendor
+composer.phar
+composer.lock
 #/.htaccess
 
 #/var/www/test.grapheme.ru/infinity-krasnodar/public_html/uploads
