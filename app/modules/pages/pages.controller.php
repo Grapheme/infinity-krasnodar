@@ -96,6 +96,8 @@ class PagesController extends BaseController {
 
         Config::set('page.slug', $url);
 
+        #print_r($this->tpl.$page->template);exit();
+
         return View::make(
 		    $this->tpl.$page->template,
 		    array(

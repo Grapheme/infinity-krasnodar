@@ -1,7 +1,11 @@
 <?php
 if (Input::has('query')):
     $result = SphinxsearchController::search(Input::get('query'));
-    $totalCount = (int) count($result['channels']) + (int) count($result['products'])+ (int) count($result['accessories']) + (int) count($result['news']) + (int) count($result['pages']);
+    $totalCount = $result['channels'] ? count($result['channels']) : 0;
+    $totalCount += $result['products'] ? count($result['products']) : 0;
+    $totalCount += $result['accessories'] ? count($result['accessories']) : 0;
+    $totalCount += $result['news'] ? count($result['news']) : 0;
+    $totalCount += $result['pages'] ? count($result['pages']) : 0;
 endif;
 ?>
 

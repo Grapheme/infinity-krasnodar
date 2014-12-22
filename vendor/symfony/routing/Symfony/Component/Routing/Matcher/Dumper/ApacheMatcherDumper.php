@@ -16,10 +16,6 @@ use Symfony\Component\Routing\Route;
 /**
  * Dumps a set of Apache mod_rewrite rules.
  *
- * @deprecated Deprecated since version 2.5, to be removed in 3.0.
- *             The performance gains are minimal and it's very hard to replicate
- *             the behavior of PHP implementation.
- *
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Kris Wallsmith <kris@symfony.com>
  */
@@ -43,7 +39,7 @@ class ApacheMatcherDumper extends MatcherDumper
     {
         $options = array_merge(array(
             'script_name' => 'app.php',
-            'base_uri' => '',
+            'base_uri'    => '',
         ), $options);
 
         $options['script_name'] = self::escape($options['script_name'], ' ', '\\');
@@ -141,10 +137,10 @@ class ApacheMatcherDumper extends MatcherDumper
         }
         foreach ($this->normalizeValues($route->getDefaults()) as $key => $value) {
             $variables[] = 'E=_ROUTING_default_'.$key.':'.strtr($value, array(
-                ':' => '\\:',
-                '=' => '\\=',
+                ':'  => '\\:',
+                '='  => '\\=',
                 '\\' => '\\\\',
-                ' ' => '\\ ',
+                ' '  => '\\ ',
             ));
         }
         $variables = implode(',', $variables);

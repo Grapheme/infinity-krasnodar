@@ -97,7 +97,9 @@ abstract class Client
     public function insulate($insulated = true)
     {
         if ($insulated && !class_exists('Symfony\\Component\\Process\\Process')) {
+            // @codeCoverageIgnoreStart
             throw new \RuntimeException('Unable to isolate requests as the Symfony Process Component is not installed.');
+            // @codeCoverageIgnoreEnd
         }
 
         $this->insulated = (bool) $insulated;
@@ -113,7 +115,7 @@ abstract class Client
     public function setServerParameters(array $server)
     {
         $this->server = array_merge(array(
-            'HTTP_HOST' => 'localhost',
+            'HTTP_HOST'       => 'localhost',
             'HTTP_USER_AGENT' => 'Symfony2 BrowserKit',
         ), $server);
     }
@@ -386,7 +388,9 @@ abstract class Client
      */
     protected function getScript($request)
     {
+        // @codeCoverageIgnoreStart
         throw new \LogicException('To insulate requests, you need to override the getScript() method.');
+        // @codeCoverageIgnoreEnd
     }
 
     /**

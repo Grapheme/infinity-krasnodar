@@ -335,17 +335,6 @@ class FinderTest extends Iterator\RealIteratorTestCase
     /**
      * @dataProvider getAdaptersTestData
      */
-    public function testInWithGlobBrace($adapter)
-    {
-        $finder = $this->buildFinder($adapter);
-        $finder->in(array(__DIR__.'/Fixtures/{A,copy/A}/B/C'))->getIterator();
-
-        $this->assertIterator($this->toAbsoluteFixtures(array('A/B/C/abc.dat', 'copy/A/B/C/abc.dat.copy')), $finder);
-    }
-
-    /**
-     * @dataProvider getAdaptersTestData
-     */
     public function testGetIterator($adapter)
     {
         $finder = $this->buildFinder($adapter);
@@ -614,7 +603,7 @@ class FinderTest extends Iterator\RealIteratorTestCase
 
     public function testAdaptersChaining()
     {
-        $iterator = new \ArrayIterator(array());
+        $iterator  = new \ArrayIterator(array());
         $filenames = $this->toAbsolute(array('foo', 'foo/bar.tmp', 'test.php', 'test.py', 'toto'));
         foreach ($filenames as $file) {
             $iterator->append(new \Symfony\Component\Finder\SplFileInfo($file, null, null));

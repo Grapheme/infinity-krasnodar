@@ -5,33 +5,29 @@
  */
 
 namespace Whoops\Handler;
-
-use Exception;
 use Whoops\Exception\Inspector;
 use Whoops\Run;
+use Exception;
 
 interface HandlerInterface
 {
     /**
-     * @return int|null A handler may return nothing, or a Handler::HANDLE_* constant
+     * @return int|null  A handler may return nothing, or a Handler::HANDLE_* constant
      */
     public function handle();
 
     /**
-     * @param  Run  $run
-     * @return void
+     * @param Run $run
      */
     public function setRun(Run $run);
 
     /**
-     * @param  Exception $exception
-     * @return void
+     * @param Exception $exception
      */
     public function setException(Exception $exception);
 
     /**
-     * @param  Inspector $inspector
-     * @return void
+     * @param Inspector $inspector
      */
     public function setInspector(Inspector $inspector);
 }

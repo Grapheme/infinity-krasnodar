@@ -87,13 +87,13 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
         register_shutdown_function(array($this->store, 'cleanup'));
 
         $this->options = array_merge(array(
-            'debug' => false,
-            'default_ttl' => 0,
-            'private_headers' => array('Authorization', 'Cookie'),
-            'allow_reload' => false,
-            'allow_revalidate' => false,
+            'debug'                  => false,
+            'default_ttl'            => 0,
+            'private_headers'        => array('Authorization', 'Cookie'),
+            'allow_reload'           => false,
+            'allow_revalidate'       => false,
             'stale_while_revalidate' => 2,
-            'stale_if_error' => 60,
+            'stale_if_error'         => 60,
         ), $options);
     }
 
@@ -527,7 +527,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     protected function lock(Request $request, Response $entry)
     {
         // try to acquire a lock to call the backend
-        $lock = $this->store->lock($request);
+        $lock = $this->store->lock($request, $entry);
 
         // there is already another process calling the backend
         if (true !== $lock) {

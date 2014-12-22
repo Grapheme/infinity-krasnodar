@@ -84,7 +84,7 @@ abstract class AbstractToken implements TokenInterface
      * The user can be a UserInterface instance, or an object implementing
      * a __toString method or the username as a regular string.
      *
-     * @param string|object $user The user
+     * @param mixed $user The user
      * @throws \InvalidArgumentException
      */
     public function setUser($user)

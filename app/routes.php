@@ -161,8 +161,6 @@ App::missing(function ($exception) {
 });
 
 
-
-
 /***********************************************************************/
 /******************** ЗАГРУЗКА РЕСУРСОВ ИЗ МОДУЛЕЙ *********************/
 /***********************************************************************/
@@ -257,7 +255,7 @@ foreach ($files as $file) {
             if ($load_debug) echo " [ load menus... ] ";
             $mod_menu[$module_name] = $module_fullname::$returnMenu();
         }
-
+        
     } else {
 
         if ($load_debug) echo " CLASS NOT FOUND: {$module_fullname} | composer dump-autoload OR file name start with DIGIT!";
@@ -288,5 +286,4 @@ Config::set('mod_actions', $mod_actions);
 Config::set('mod_menu', $mod_menu);
 #View::share('mod_actions', $mod_actions);
 #print_r($app);
-
 /***********************************************************************/

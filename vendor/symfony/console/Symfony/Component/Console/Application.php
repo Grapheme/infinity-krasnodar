@@ -13,7 +13,6 @@ namespace Symfony\Component\Console;
 
 use Symfony\Component\Console\Descriptor\TextDescriptor;
 use Symfony\Component\Console\Descriptor\XmlDescriptor;
-use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -68,7 +67,6 @@ class Application
     private $helperSet;
     private $dispatcher;
     private $terminalDimensions;
-    private $defaultCommand;
 
     /**
      * Constructor.
@@ -82,7 +80,6 @@ class Application
     {
         $this->name = $name;
         $this->version = $version;
-        $this->defaultCommand = 'list';
         $this->helperSet = $this->getDefaultHelperSet();
         $this->definition = $this->getDefaultInputDefinition();
 
@@ -148,8 +145,9 @@ class Application
             if ($exitCode > 255) {
                 $exitCode = 255;
             }
-
+            // @codeCoverageIgnoreStart
             exit($exitCode);
+            // @codeCoverageIgnoreEnd
         }
 
         return $exitCode;
@@ -182,8 +180,8 @@ class Application
         }
 
         if (!$name) {
-            $name = $this->defaultCommand;
-            $input = new ArrayInput(array('command' => $this->defaultCommand));
+            $name = 'list';
+            $input = new ArrayInput(array('command' => 'list'));
         }
 
         // the command name MUST be the first element of the input
@@ -723,9 +721,9 @@ class Application
                 $trace = $e->getTrace();
                 array_unshift($trace, array(
                     'function' => '',
-                    'file' => $e->getFile() != null ? $e->getFile() : 'n/a',
-                    'line' => $e->getLine() != null ? $e->getLine() : 'n/a',
-                    'args' => array(),
+                    'file'     => $e->getFile() != null ? $e->getFile() : 'n/a',
+                    'line'     => $e->getLine() != null ? $e->getLine() : 'n/a',
+                    'args'     => array(),
                 ));
 
                 for ($i = 0, $count = count($trace); $i < $count; $i++) {
@@ -934,7 +932,7 @@ class Application
 
             new InputOption('--help',           '-h', InputOption::VALUE_NONE, 'Display this help message.'),
             new InputOption('--quiet',          '-q', InputOption::VALUE_NONE, 'Do not output any message.'),
-            new InputOption('--verbose',        '-v|vv|vvv', InputOption::VALUE_NONE, 'Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug.'),
+            new InputOption('--verbose',        '-v|vv|vvv', InputOption::VALUE_NONE, 'Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug'),
             new InputOption('--version',        '-V', InputOption::VALUE_NONE, 'Display this application version.'),
             new InputOption('--ansi',           '',   InputOption::VALUE_NONE, 'Force ANSI output.'),
             new InputOption('--no-ansi',        '',   InputOption::VALUE_NONE, 'Disable ANSI output.'),
@@ -964,7 +962,6 @@ class Application
             new DialogHelper(),
             new ProgressHelper(),
             new TableHelper(),
-            new QuestionHelper(),
         ));
     }
 
@@ -1076,7 +1073,7 @@ class Application
                 }
 
                 $lev = levenshtein($subname, $parts[$i]);
-                if ($lev <= strlen($subname) / 3 || '' !== $subname && false !== strpos($parts[$i], $subname)) {
+                if ($lev <= strlen($subname) / 3 || false !== strpos($parts[$i], $subname)) {
                     $alternatives[$collectionName] = $exists ? $alternatives[$collectionName] + $lev : $lev;
                 } elseif ($exists) {
                     $alternatives[$collectionName] += $threshold;
@@ -1095,16 +1092,6 @@ class Application
         asort($alternatives);
 
         return array_keys($alternatives);
-    }
-
-    /**
-     * Sets the default Command name.
-     *
-     * @param string $commandName The Command name
-     */
-    public function setDefaultCommand($commandName)
-    {
-        $this->defaultCommand = $commandName;
     }
 
     private function stringWidth($string)

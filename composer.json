@@ -4,11 +4,11 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*",
+		"laravel/framework": "4.1.*",
 		"way/generators": "*",
-		"intervention/image": "dev-master",
-        "barryvdh/laravel-ide-helper": "1.*",
-		"doctrine/dbal": "2.5.x-dev",
+		"intervention/image": "*",
+        "barryvdh/laravel-ide-helper": "*",
+		"doctrine/dbal": "*",
 		"barryvdh/laravel-debugbar": "*",
 		"scalia/sphinxsearch": "*"
 	},

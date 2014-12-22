@@ -10,5 +10,3 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
 @endif
 {{ HTML::script('js/vendor/modernizr-2.6.2.min.js') }}
-
-{{ HTML::style('theme/css/sumoselect.css') }}

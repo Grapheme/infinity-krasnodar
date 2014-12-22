@@ -9,26 +9,12 @@
         <header>
             <h1>Контакты</h1>
             <div class="desc">
-                {{ $content }}
+                
             </div>
         </header>
         <div class="contact-wrapper clearfix">
             <div class="left">
-                <div>
-                    <h2>Адрес</h2>
-                    <address>
-                        г. Краснодар,<br>
-                        ул. Горячеключевская, 5
-                    </address>
-                </div>
-                <div>
-                    <h2>Телефон</h2>
-                    <a href="tel:+78612001331">+7 (861) 200-13-31</a>
-                </div>
-                <div>
-                    <h2>Email</h2>
-                    <a href="mailto:Kr.infiniti@gedon.ru">Kr.infiniti@gedon.ru</a>
-                </div>
+                {{ $content }}
             </div>
             <div class="mid">
                 <div>

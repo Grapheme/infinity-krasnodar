@@ -1,6 +1,6 @@
 <?php
 
-class SearchController extends \BaseController {
+class SphinxsearchController extends \BaseController {
 
     public static $name = 'search';
     public static $group = 'production';
