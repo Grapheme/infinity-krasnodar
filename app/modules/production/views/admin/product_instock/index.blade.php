@@ -41,7 +41,7 @@
 
         					@if(Allow::action($module['group'], 'product_delete'))
 							<form method="POST" action="{{ URL::route('instock.destroy',array('product_id'=>$product->id,'instock_id'=>$instock->id)) }}" style="display:inline-block">
-								<button type="submit" class="btn btn-danger remove-product-complection">Удалить</button>
+								<button type="submit" class="btn btn-danger remove-product-instock">Удалить</button>
 							</form>
                     		@endif
     					</td>
