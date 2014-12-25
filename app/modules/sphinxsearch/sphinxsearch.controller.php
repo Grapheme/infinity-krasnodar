@@ -58,27 +58,27 @@ class SphinxsearchController extends \BaseController {
 
     private static function readIndexes($searchText){
 
-        $channels = SphinxSearch::search($searchText, 'channelsIndexInfinity')->setFieldWeights(array('title' => 10, 'short' => 8, 'desc' => 6, 'category_title' => 1))
+        $channels = SphinxSearch::search($searchText, 'channelsIndexInfinityKrasnodar')->setFieldWeights(array('title' => 10, 'short' => 8, 'desc' => 6, 'category_title' => 1))
             ->setMatchMode(\Sphinx\SphinxClient::SPH_MATCH_EXTENDED)
             ->SetSortMode(\Sphinx\SphinxClient::SPH_SORT_RELEVANCE, "@weight DESC")
             ->limit(6)->get();
 
-        $products = SphinxSearch::search($searchText, 'productsIndexInfinity')->setFieldWeights(array('title' => 10, 'preview' => 8, 'content' => 6,'specifications'=>8, 'category_title' => 1))
+        $products = SphinxSearch::search($searchText, 'productsIndexInfinityKrasnodar')->setFieldWeights(array('title' => 10, 'preview' => 8, 'content' => 6,'specifications'=>8, 'category_title' => 1))
             ->setMatchMode(\Sphinx\SphinxClient::SPH_MATCH_EXTENDED)
             ->SetSortMode(\Sphinx\SphinxClient::SPH_SORT_RELEVANCE, "@weight DESC")
             ->limit(6)->get();
 
-        $accessories = SphinxSearch::search($searchText, 'productsAccessibilityIndexInfinity')->setFieldWeights(array('title' => 10, 'description' => 8))
+        $accessories = SphinxSearch::search($searchText, 'productsAccessibilityIndexInfinityKrasnodar')->setFieldWeights(array('title' => 10, 'description' => 8))
             ->setMatchMode(\Sphinx\SphinxClient::SPH_MATCH_EXTENDED)
             ->SetSortMode(\Sphinx\SphinxClient::SPH_SORT_RELEVANCE, "@weight DESC")
             ->limit(6)->with('product.meta')->get();
 
-        $news = SphinxSearch::search($searchText, 'newsIndexInfinity')->setFieldWeights(array('title' => 10, 'preview' => 8, 'content' => 6))
+        $news = SphinxSearch::search($searchText, 'newsIndexInfinityKrasnodar')->setFieldWeights(array('title' => 10, 'preview' => 8, 'content' => 6))
             ->setMatchMode(\Sphinx\SphinxClient::SPH_MATCH_EXTENDED)
             ->SetSortMode(\Sphinx\SphinxClient::SPH_SORT_RELEVANCE, "@weight DESC")
             ->limit(6)->get();
 
-        $pages = SphinxSearch::search($searchText, 'pagesIndexInfinity')->setFieldWeights(array('seo_title' => 10, 'seo_description' => 10, 'seo_h1' => 10, 'content' => 8))
+        $pages = SphinxSearch::search($searchText, 'pagesIndexInfinityKrasnodar')->setFieldWeights(array('seo_title' => 10, 'seo_description' => 10, 'seo_h1' => 10, 'content' => 8))
             ->setMatchMode(\Sphinx\SphinxClient::SPH_MATCH_EXTENDED)
             ->SetSortMode(\Sphinx\SphinxClient::SPH_SORT_RELEVANCE, "@weight DESC")
             ->limit(6)->get();

@@ -7,4 +7,8 @@ return array(
         '2' => 'В наличии с ПТС',
         '3' => 'В поставке',
     ),
+    'no-reply@infiniti-krasnodar.ru' => array(
+        'login' => 'no-reply@infiniti-krasnodar.ru',
+        'pass' => '8ZMqwNwtXy'
+    )
 );

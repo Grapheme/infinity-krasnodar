@@ -9,13 +9,13 @@ return array(
 	'use_css_local' => FALSE,
 	'use_scripts_local' => FALSE,
 	
-	'default_page_title' => 'Infiniti GEDON',
+	'default_page_title' => 'Infiniti Krasnodar',
 	'template' => 'site',
 	'manifest' => storage_path('meta'),
 
 
 	'debug' => false,
-	'url' => 'http://www.infiniti-gedon.ru/',
+	'url' => 'http://www.infiniti-krasnodar.ru/',
 	'timezone' => 'UTC',
 	'locale' => 'ru',
 	#'locales' => array('ru', 'en', 'de'),

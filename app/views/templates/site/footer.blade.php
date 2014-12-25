@@ -89,8 +89,11 @@
             <div class="contact-block">
                 <a href="tel:+78612001331" class="contact-link">+7 (861) 200-13-31</a>
             </div>
-            <div class="soc-icons">
+            <div class="soc-icons contact-block">
                 <a href="https://www.facebook.com/infinitigedon" class="soc-link icon-fb"></a>
+            </div>
+            <div class="contact-block">
+                <a href="http://infiniti.ru" target="_blank" class="typical-link">INFINITI в России</a>
             </div>
         </div>
         <div class="clearfix"></div>
