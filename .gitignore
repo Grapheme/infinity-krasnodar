@@ -1,14 +1,6 @@
 .idea
-/vendor
 composer.phar
 composer.lock
-#/.htaccess
-
-#/var/www/test.grapheme.ru/infinity-krasnodar/public_html/uploads
-
-#public_html/uploads/*
-#public_html/uploads/galleries/thumbnail/*.gpg
-#public_html/uploads/galleries/thumbnail/*.png
-
-#public_html/uploads/galleries/*.jpg
-#public_html/uploads/galleries/thumbs/*.jpg
+/.htaccess
+/public_html/uploads
+vendor
