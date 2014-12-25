@@ -5,6 +5,9 @@ return array(
     'feedback_mail' => 'support@grapheme.ru',
     'feedback_name' => 'grapheme.ru',
 
+    'sendto_mail' => 'support@grapheme.ru',
+    #'sendto_mail' => 'info@infiniti-krasnodar.ru',
+
 	'driver' => 'smtp',
 	'host' => 'in.mailjet.com',
 	'port' => 587,
