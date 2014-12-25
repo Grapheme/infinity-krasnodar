@@ -9,5 +9,5 @@ return array(
     'use_css_local' => FALSE,
     'use_scripts_local' => FALSE,
 	
-	'debug' => TRUE,
+	'debug' => FALSE,
 );

@@ -17,10 +17,11 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         $app = $this->app;
-        $app['config']->package('barryvdh/laravel-debugbar', __DIR__ . '/config');
+
+        $this->registerConfiguration();
 
         if ($app->runningInConsole()) {
-            if ($this->app['config']->get('laravel-debugbar::config.capture_console')) {
+            if ($this->app['config']->get('laravel-debugbar::config.capture_console') && method_exists($app, 'shutdown')) {
                 $app->shutdown(
                     function ($app) {
                         /** @var LaravelDebugbar $debugbar */
@@ -72,13 +73,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         }
     }
 
-    protected function shouldUseMiddleware()
-    {
-        $app = $this->app;
-        list($version) = explode('-', $app::VERSION);
-        return !$app->runningInConsole() && version_compare($version, '4.1', '>=') && version_compare($version, '5.0', '<');
-    }
-
     /**
      * Register the service provider.
      *
@@ -105,9 +99,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
         $this->app['command.debugbar.publish'] = $this->app->share(
             function ($app) {
-                //Make sure the asset publisher is registered.
-                $app->register('Illuminate\Foundation\Providers\PublisherServiceProvider');
-                return new Console\PublishCommand($app['asset.publisher']);
+                return new Console\PublishCommand();
             }
         );
 
@@ -122,6 +114,33 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         if ($this->shouldUseMiddleware()) {
             $this->app->middleware('Barryvdh\Debugbar\Middleware\Stack', array($this->app));
         }
+    }
+    
+    /**
+     * Register configuration files, with L5 fallback
+     */
+    protected function registerConfiguration()
+    {
+        // Is it possible to register the config?
+        if (method_exists($this->app['config'], 'package')) {
+            $this->app['config']->package('barryvdh/laravel-debugbar', __DIR__ . '/config');
+        } else {
+            // Load the config for now..
+            $config = $this->app['files']->getRequire(__DIR__ .'/config/config.php');
+            $this->app['config']->set('laravel-debugbar::config', $config);
+        }
+    }
+    
+    /**
+     * Detect if the Middelware should be used.
+     * 
+     * @return bool
+     */
+    protected function shouldUseMiddleware()
+    {
+        $app = $this->app;
+        $version = $app::VERSION;
+        return !$app->runningInConsole() && version_compare($version, '4.1-dev', '>=') && version_compare($version, '5.0-dev', '<');
     }
 
     /**

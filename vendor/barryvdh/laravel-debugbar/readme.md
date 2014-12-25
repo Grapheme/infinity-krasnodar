@@ -1,4 +1,4 @@
-## Laravel 4 Debugbar
+## Laravel Debugbar
 [![Packagist License](https://poser.pugx.org/barryvdh/laravel-debugbar/license.png)](http://choosealicense.com/licenses/mit/)
 [![Latest Stable Version](https://poser.pugx.org/barryvdh/laravel-debugbar/version.png)](https://packagist.org/packages/barryvdh/laravel-debugbar)
 [![Total Downloads](https://poser.pugx.org/barryvdh/laravel-debugbar/d/total.png)](https://packagist.org/packages/barryvdh/laravel-debugbar)
@@ -46,6 +46,7 @@ composer require barryvdh/laravel-debugbar
 ```
 
 After updating composer, add the ServiceProvider to the providers array in app/config/app.php
+> Note for Laravel 5: If you use a catch-all/fallback route, make sure you load the Debugbar ServiceProvider before your own App ServiceProviders.
 
 ```
 'Barryvdh\Debugbar\ServiceProvider',

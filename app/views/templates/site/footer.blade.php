@@ -1,12 +1,12 @@
 <?php
-    $footer_models = ProductCategory::orderby('id')->with(array('product'=>function($query_product){
+    $footer_models = ProductCategory::with(array('product'=>function($query_product){
+        $query_product->orderBy('order');
         $query_product->where('publication',1);
-        $query_product->where('in_menu',1);
+        #$query_product->where('in_menu',1);
         $query_product->with(array('meta'=>function($query_product_meta){
             $query_product_meta->orderBy('title');
         }));
     }))->get();
-
     $pages_seo_url = array();
     $all_pages = I18nPage::with('metas')->get();
     foreach($all_pages as $page):
@@ -21,7 +21,7 @@
                 <ul class="footer-ul">
             @foreach($footer_models as $product_category)
                 @foreach($product_category->product as $product)
-                    <li class="option"><a href="{{ link::to(ProductionController::$prefix_url.'/'.$product->meta->first()->seo_url) }}">{{ $product->meta->first()->short_title  }}</a>
+                    <li class="option"><a href="{{ link::to(ProductionController::$prefix_url.'/'.$product->meta->first()->seo_url) }}">{{ substr($product->meta->first()->title,9)  }}</a>
                 @endforeach
             @endforeach
                 </ul>

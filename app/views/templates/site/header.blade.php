@@ -94,8 +94,8 @@
     <div class="header-right">
         <div class="search">
             {{ Form::open(array('url'=>link::to('search/request'),'method'=>'post')) }}
-            <input type="text" placeholder="Поиск" name="search_request" class="search-input" value="{{ Input::get('query') }}">
-            <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Поиск" name="search_request" class="search-input" value="{{ Input::get('query') }}">
+                <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
             {{ Form::close() }}
         </div>
         <a href="javascript:void(0);" class="gedon-link"></a>

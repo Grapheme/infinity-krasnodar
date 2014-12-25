@@ -26,6 +26,7 @@ class CreateProductionTables extends Migration {
         if (!Schema::hasTable($this->table2)) {
             Schema::create($this->table2, function(Blueprint $table) {
                 $table->increments('id');
+                $table->integer('order')->default(0)->unsigned()->nullable();
                 $table->integer('category_id')->default(0)->unsigned()->nullable();
                 $table->boolean('publication')->default(1)->unsigned()->nullable();
                 $table->string('brochure',256)->nullable();

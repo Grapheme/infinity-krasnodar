@@ -5,13 +5,16 @@ return array(
     'feedback_mail' => 'support@grapheme.ru',
     'feedback_name' => 'grapheme.ru',
 
-	'driver' => 'sendmail',
-	'host' => '',
+	'driver' => 'smtp',
+	'host' => 'in.mailjet.com',
 	'port' => 587,
-	'from' => array('address' => 'info@infiniti-krasnodar.ru', 'name' => 'Infiniti'),
-	'encryption' => 'tls',
-	'username' => '',
-	'password' => '',
+	'from' => array(
+		'address' => 'no-reply@infiniti-krasnodar.ru',
+		'name' => 'Infinity'
+	),
+	'username' => '0d8dd8623bd38b41c43683c41c0558eb',
+	'password' => '465c500abd5f680f0b20405deb967b36',
 	'sendmail' => '/usr/sbin/sendmail -bs',
+	'encryption' => 'tls',
 	'pretend' => false,
 );
