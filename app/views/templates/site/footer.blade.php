@@ -13,6 +13,7 @@
         $pages_seo_url[$page->slug] = $page->metas->first();
     endforeach;
 ?>
+</div>
 <footer class="main-footer">
     <div class="footer-top">
         <div class="footer-left">
