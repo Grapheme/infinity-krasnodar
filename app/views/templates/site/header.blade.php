@@ -26,7 +26,7 @@
     $route = Route::currentRouteName();
     $page_slug = Config::get('page.slug');
 ?>
-
+<div class="page-wrp">
 <header class="main-header{{ Request::is('/') ? '' : ' static-header' }}">
     @if(!Request::is('/'))
     <a href="{{ link::to() }}" class="logo"></a>
