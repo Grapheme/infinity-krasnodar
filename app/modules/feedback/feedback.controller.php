@@ -119,6 +119,10 @@ class FeedbackController extends BaseController {
             'product'=>'required'
         ));
         if($validation->passes()):
+            Config::set('mail.sendto_mail_copy.first','kr.infiniti-ruksto@gedon.ru');
+            Config::set('mail.sendto_mail_copy.second','kr.infiniti-master@gedon.ru');
+            Config::set('mail.sendto_mail_copy.third','kr.infiniti-master2@gedon.ru');
+            Config::set('mail.sendto_mail_copy.four','kr.infiniti-servise@gedon.ru');
             $this->postSendmessage(
                 Input::get('email'),
                 array('subject'=>'Запись на сервис','name'=>Input::get('fio'),'phone'=>Input::get('phone'),'product'=>Input::get('product'),'email'=>Input::get('email'),'content'=>Input::get('content')),
@@ -161,6 +165,18 @@ class FeedbackController extends BaseController {
 
         return  Mail::send($this->module['gtpl'].$template,$data, function ($message) use ($email, $data) {
             $message->from(Config::get('mail.from.address'), Config::get('mail.from.name'));
+            if (Config::has('mail.sendto_mail_copy.first')):
+                $message->cc(Config::get('mail.sendto_mail_copy.first'));
+            endif;
+            if (Config::has('mail.sendto_mail_copy.second')):
+                $message->cc(Config::get('mail.sendto_mail_copy.second'));
+            endif;
+            if (Config::has('mail.sendto_mail_copy.third')):
+                $message->cc(Config::get('mail.sendto_mail_copy.third'));
+            endif;
+            if (Config::has('mail.sendto_mail_copy.four')):
+                $message->cc(Config::get('mail.sendto_mail_copy.four'));
+            endif;
             $message->to(Config::get('mail.sendto_mail'))->subject(@$data['subject']);
         });
     }
