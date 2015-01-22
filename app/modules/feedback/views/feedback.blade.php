@@ -4,14 +4,12 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<div>
-		<p>
-            Сообщение от: {{ $name }} <{{ $email }}>
-            <br>Телефон: {{ $phone }}
-            <hr/>
-			{{ $content }}
-            <hr/>
-		</p>
-	</div>
+<div>
+	<p>
+		Посетитель: {{ @$name }} <br>
+		Email/Телефон: {{ @$email }}<br>
+		Сообщение: <br>{{ $content }}
+	</p>
+</div>
 </body>
 </html>

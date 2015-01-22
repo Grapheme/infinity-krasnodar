@@ -35,17 +35,11 @@ class FeedbackController extends BaseController {
 
         if(!Request::ajax()) return App::abort(404);
         $json_request = array('status'=>FALSE, 'responseText'=>'','responseErrorText'=>'','redirect'=>FALSE);
-        $validation = Validator::make(Input::all(), array(
-            'fio'=>'required',
-            'email'=>'required',  #|email
-            #'phone'=>'required',
-            'content'=>'required'
-        ));
+        $validation = Validator::make(Input::all(), array('fio'=>'required','email'=>'required','content'=>'required'));
         if($validation->passes()):
-            $this->postSendmessage(
-                Input::get('email'),
-                array('subject'=>'Заказ звонка', 'email'=>Input::get('email'), 'name'=>Input::get('fio'), 'phone'=>Input::get('phone'), 'content'=>Input::get('content'))
-            );
+//            Config::set('mail.sendto_mail','infiniti-info@gedon.ru');
+            Config::set('mail.sendto_mail','vkharseev@gmail.com');
+            $this->postSendmessage(NULL,array('subject'=>'Форма обратной связи','email'=>Input::get('email'),'name'=>Input::get('fio'),'content'=>Input::get('content')));
             $json_request['responseText'] = 'Сообщение отправлено';
             $json_request['status'] = TRUE;
         else:
