@@ -2,24 +2,17 @@
  *  http://grapheme.ru/
  */
 
-$(function(){
-
-});
-
-
 function runFormValidation() {
 
     var contact_feedback = $("#contact-feedback-form").validate({
         rules:{
             fio: {required : true},
-            email: {required : true, email : true},
-            //phone: {required : true},
+            email: {required : true},
             content: {required : true}
         },
         messages : {
             fio : {required : 'Укажите Ваше полное имя'},
-            email : {required : 'Укажите адрес электронной почты'},
-            phone : {required : 'Укажите контактный номер телефона'},
+            email : {required : 'Укажите Email или телефон'},
             content : {required : 'Укажите текст вопроса'}
         },
         errorPlacement : function(error, element){error.insertAfter(element.parent());},
