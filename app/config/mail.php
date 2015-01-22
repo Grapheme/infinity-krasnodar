@@ -6,7 +6,7 @@ return array(
     'feedback_name' => 'grapheme.ru',
 
     #'sendto_mail' => 'support@grapheme.ru',
-    'sendto_mail' => 'kr.infiniti-sales@gedon.ru ',
+    'sendto_mail' => 'kr.infiniti-sales@gedon.ru',
 
 	'driver' => 'smtp',
 	'host' => 'in.mailjet.com',
