@@ -38,7 +38,7 @@ class FeedbackController extends BaseController {
         $validation = Validator::make(Input::all(), array('fio'=>'required','email'=>'required','content'=>'required'));
         if($validation->passes()):
 //            Config::set('mail.sendto_mail','infiniti-info@gedon.ru');
-            Config::set('mail.sendto_mail','vkharseev@gmail.com');
+//            Config::set('mail.sendto_mail','vkharseev@gmail.com');
             $this->postSendmessage(NULL,array('subject'=>'Форма обратной связи','email'=>Input::get('email'),'name'=>Input::get('fio'),'content'=>Input::get('content')));
             $json_request['responseText'] = 'Сообщение отправлено';
             $json_request['status'] = TRUE;
