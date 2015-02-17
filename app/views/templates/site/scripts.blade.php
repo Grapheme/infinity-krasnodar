@@ -53,10 +53,6 @@
 
     </script>
 
-    <!-- BEGIN CLICKTEX CODE {literal} -->
-    <script type="text/javascript" charset="utf-8" async="async" src="//www.clicktex.ru/code/5674"></script>
-    <!-- {/literal} END CLICKTEX CODE -->
-
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
     (function (d, w, c) {
