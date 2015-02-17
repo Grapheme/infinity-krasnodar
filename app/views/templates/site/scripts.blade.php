@@ -80,3 +80,8 @@
     </script>
     <noscript><div><img src="//mc.yandex.ru/watch/27506637" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    
+	<!-- BEGIN CLICKTEX CODE  -->
+	<script type="text/javascript" charset="utf-8" async="async" src="//www.clicktex.ru/code/5674"></script>
+	<!-- END CLICKTEX CODE -->
+	
