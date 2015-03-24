@@ -1,6 +1,6 @@
 <?php
     $channelCategory = ChannelCategory::where('slug','main-page-slider')->first();
-    $products_slider = Channel::where('category_id',@$channelCategory->id)->orderBy('title')->with('images')->get();
+    $products_slider = Channel::where('category_id',@$channelCategory->id)->orderBy('order')->with('images')->get();
 ?>
 <div class="slider-container">
     <div class="slider-img toload"></div>
