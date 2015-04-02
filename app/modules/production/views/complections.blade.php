@@ -24,12 +24,14 @@
             <div class="car-head">
                 <h3>{{ $complection->title }}</h3>
                 <div class="car-price">{{ $complection->price }}</div>
+        @if(!empty($complection->images))
             @if(File::exists(public_path('uploads/galleries/thumbs/'.$complection->images->name)))
                 <img class="car-image" src="{{ asset('uploads/galleries/thumbs/'.$complection->images->name) }}" alt="">
             @endif
+        @endif
             </div><!--
          --><div class="car-body">
-                @if(0)
+                @if(FALSE)
                     <div class="car-links">
                     @if(!empty($complection->brochure) && File::exists(public_path($complection->brochure)))
                          <a target="_blank" class="" href="{{ asset($complection->brochure) }}"><span class="icon icon-bricks"></span> Брошюра</a>
@@ -56,6 +58,11 @@
         </li>
     @endforeach
     </ul>
+    <div class="dict">
+        *для автомобилей, окрашенных краской белый перламутр (QAA), 
+        увеличение рекомендованной розничной цены на автомобиль, 
+        включая НДС, составляет 50 000 рублей.
+    </div>
 </section>
 @endif
 @stop
@@ -64,14 +71,16 @@
         var comtabs = (function(){
             function init() {
                 $('.js-comtab').first().siblings().hide();
-                $('.js-comlink').first().addClass('active');
+                $('.js-comlink').first().trigger('click');
             }
             $('.js-comlink').on('click', function(){
                 $(this).addClass('active').parent().siblings().find('a').removeClass('active');
                 $('.js-comtab[data-type="' + $(this).attr('data-type') + '"]').show().siblings().hide();
                 return false;
             });
-            init();
+            $(function(){
+                init();
+            });
         })();
     </script>
 @stop

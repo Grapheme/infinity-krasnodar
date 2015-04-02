@@ -9,7 +9,7 @@
         @foreach($products as $product)
             <li class="sub-offers-li">
             @if(File::exists(public_path('uploads/galleries/'.$product->images['name'])))
-            <div class="sub-offers-li-head" style="background: url({{ asset('uploads/galleries/thumbs/'.$product->images['name']) }}) no-repeat 0 0 / cover;">
+            <div class="sub-offers-li-head" style="background: url({{ asset('uploads/galleries/thumbs/'.$product->images['name']) }}) no-repeat center center / cover;">
                <a href="{{ link::to(ProductionController::$prefix_url.'/'.$product->meta->first()->seo_url) }}"></a>
             </div>
             @endif

@@ -97,7 +97,7 @@
                 'click': false,
                 'swipe': false,
                 'trackpad': false,
-                'transition': 'crossfade'
+                'transition': 'dissolve'
             });
             var color_fotorama = $fotoramaDiv.data('fotorama');
             //$fotoramaDiv.hide();

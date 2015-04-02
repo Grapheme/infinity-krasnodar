@@ -70,7 +70,7 @@ class ProductionController extends BaseController {
     public function showProduct($url){
 
         if (!@$url) $url = Input::get('url');
-        $products = Product::with(array('meta' => function ($query) use ($url) {
+        $products = Product::where('show_item',1)->with(array('meta' => function ($query) use ($url) {
             $query->where('seo_url', $url);
         }))->with('images')->with(array('gallery'=>function($query){
             $query->with('photos');
@@ -105,7 +105,7 @@ class ProductionController extends BaseController {
     public function showProductSpecifications($url){
 
         if (!@$url) $url = Input::get('url');
-        $products = Product::with(array('meta' => function ($query) use ($url) {$query->where('seo_url', $url);}))->get();
+        $products = Product::where('show_item',1)->with(array('meta' => function ($query) use ($url) {$query->where('seo_url', $url);}))->get();
         $product = NULL;
         foreach ($products as $product_info):
             if (!is_null($product_info->meta->first()) && $product_info->meta->first()->seo_url == $url):
@@ -131,7 +131,7 @@ class ProductionController extends BaseController {
     public function showProductComplections($url){
 
         if (!@$url) $url = Input::get('url');
-        $products = Product::with(array('meta' => function ($query) use ($url) {
+        $products = Product::where('show_item',1)->with(array('meta' => function ($query) use ($url) {
             $query->where('seo_url', $url);
         }))->with('images')->with(array('gallery'=>function($query){
             $query->with('photos');
@@ -163,7 +163,7 @@ class ProductionController extends BaseController {
     public function showProductGalleries($url){
 
         if (!@$url) $url = Input::get('url');
-        $products = Product::with(array('meta' => function ($query) use ($url) {
+        $products = Product::where('show_item',1)->with(array('meta' => function ($query) use ($url) {
                 $query->where('seo_url', $url);
             }))
             ->with(array('galleries'=>function($query){
@@ -200,7 +200,7 @@ class ProductionController extends BaseController {
     public function showProductAccessories($url){
 
         if (!@$url) $url = Input::get('url');
-        $products = Product::with(array('meta' => function ($query) use ($url) {
+        $products = Product::where('show_item',1)->with(array('meta' => function ($query) use ($url) {
             $query->where('seo_url', $url);
         }))->with(array('accessories'=>function($query){
             $query->with('images');
