@@ -14,7 +14,34 @@
     endforeach;
 ?>
 </div>
-<div id="carfinPrice"><!-- --></div> <script type="text/javascript"> (function() { var carfinParam = { 'partner': 608, 'htmlPrice': 'carfinPrice', 'positionAlign': 'left', 'positionTop': 50, 'tpl': 14 }; var carfinScript = document.createElement('script'); carfinScript.type = 'text/javascript'; carfinScript.async = true; carfinScript.charset = 'utf-8'; carfinScript.src = (("https:" == document.location.protocol) ? "https://" : "http://") + 'car-fin.ru/widget/price.js'; var carfinScriptDone = false; carfinScript.onload = carfinScript.onreadystatechange = function() { if (!carfinScriptDone && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") && typeof(carfinCalculator) == 'object') { carfinScriptDone = true; carfinCalculator.run(carfinParam); } } var firstScript = document.getElementsByTagName('script')[0]; firstScript.parentNode.insertBefore(carfinScript, firstScript); })(); </script>
+<div id="carfinPrice"><!-- --></div>
+<script type="text/javascript">
+(function() {
+   var carfinParam = {
+       'partner': 608,
+       'htmlPrice': 'carfinPrice',
+       'positionAlign': 'left',
+       'positionTop': 50,
+       'tpl': 14
+   };
+   var carfinScript = document.createElement('script');
+   carfinScript.type = 'text/javascript';
+   carfinScript.async = true;
+   carfinScript.charset = 'utf-8';
+   carfinScript.src = (("https:" == document.location.protocol) ? "https://" : "http://") + 'car-fin.ru/widget/price.js';
+   var carfinScriptDone = false;
+   carfinScript.onload = carfinScript.onreadystatechange = function() {
+       if (!carfinScriptDone
+       && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")
+       && typeof(carfinCalculator) == 'object') {
+           carfinScriptDone = true;
+           carfinCalculator.run(carfinParam);
+       }
+   }
+   var firstScript = document.getElementsByTagName('script')[0];
+   firstScript.parentNode.insertBefore(carfinScript, firstScript);
+})();
+</script>
 <footer class="main-footer">
     <div class="footer-top">
         <div class="footer-left">
