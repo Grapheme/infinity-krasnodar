@@ -348,12 +348,14 @@
                 <div class="car-type">{{ $product_category->title }}</div>
                 <ul class="cars-ul">
                  @foreach($product_category->product as $product)
+                    @if($product->show_item)
                     <li>
                         <a href="{{ link::to(ProductionController::$prefix_url.'/'.$product->meta->first()->seo_url) }}" class="full-a"></a>
                     @if(!is_null($product->menu_image) && File::exists(public_path('uploads/galleries/thumbs/'.$product->menu_image->name)))
                         <div class="car-photo" style="background-image: url({{ asset('uploads/galleries/thumbs/'.$product->menu_image->name) }});"></div>
                     @endif
                         <div class="car-name">{{ trim(preg_replace('~infiniti~is', '', $product->meta->first()->title)) }}</div>
+                    @endif
                  @endforeach
                 </ul>
             </div>

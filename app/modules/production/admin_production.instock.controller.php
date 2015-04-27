@@ -142,7 +142,7 @@ class AdminProductionInstockController extends BaseController {
         $json_request = array('status'=>FALSE, 'responseText'=>'');
         if(Request::ajax()):
             $instock = $this->instock->find($instock_id);
-            if($image = ProductInstock::where('id',$instock_id)->first()->images()):
+            if($image = $this->instock->find($instock_id)->images()->first()):
                 if (!empty($image->name) && File::exists(public_path('uploads/galleries/thumbs/'.$image->name))):
                     File::delete(public_path('uploads/galleries/thumbs/'.$image->name));
                     File::delete(public_path('uploads/galleries/'.$image->name));

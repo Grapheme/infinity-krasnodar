@@ -102,6 +102,12 @@
                                 </label>
                             </section>
                             <section>
+                                <label class="checkbox">
+                                    {{ Form::checkbox('show_item',1,true) }}
+                                    <i></i>Доступен для просмотра
+                                </label>
+                            </section>
+                            <section>
                                 <label class="label">Описание в выпадающем меню</label>
                                 <label class="textarea">
                                     {{ Form::textarea('menu_content['.$locale.']','',array('class'=>'redactor redactor_150')) }}

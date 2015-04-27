@@ -16,7 +16,12 @@
 			<div class="well">
 				<header>Для создания нового элемента заполните форму:</header>
 				<fieldset>
-
+                    <section>
+                        <label class="label">Порядковый номер</label>
+                        <label class="input">
+                            {{ Form::text('order', '') }}
+                        </label>
+                    </section>
 					<section>
 						<label class="label">Название</label>
 						<label class="input">

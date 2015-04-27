@@ -105,7 +105,7 @@ function runFormValidation() {
         }
     });
 
-    var order_testdrive_call0 = $("#order-testdrive-form0").validate({
+    var order_testdrive_call = $("#order-testdrive-form0").validate({
         rules:{
             fio: {required : true},
             phone: {required : true},
