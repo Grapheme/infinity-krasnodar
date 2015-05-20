@@ -25,7 +25,7 @@
                     continue;
                 #$products[$product->id] = $product->meta->first()->title;
                 $products[$product->product->id] = $product->product->meta[0]->title;
-                $years[] = $product->year;
+                $years[$product->year] = $product->year;
             endforeach;
             rsort($years);
         endif;
