@@ -121,7 +121,8 @@
                 <a href="tel:+78612001331" class="contact-link">+7 (861) 200-13-31</a>
             </div>
             <div class="soc-icons contact-block">
-                <a href="https://www.facebook.com/infinitigedon" class="soc-link icon-fb"></a>
+                <a target="_blank" href="https://www.facebook.com/infinitigedon" class="soc-link icon-fb"></a>
+                <a target="_blank" href="https://instagram.com/infiniti_krasnodar/" class="soc-link icon-in"></a>
             </div>
             <div class="contact-block">
                 <a href="http://infiniti.ru" target="_blank" class="typical-link">INFINITI в России</a>
