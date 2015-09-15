@@ -466,7 +466,7 @@ var tooltips = (function(){
 		timeout = setTimeout(function(){
 			cont.removeClass('active').fadeOut(100);				
 			opened = false;
-		}, 500);
+		}, 1500);
 		clearTimeout(show_timeout);
 	}
 

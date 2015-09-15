@@ -1,6 +1,17 @@
 @extends(Helper::layout())
 @section('style')
-
+<style type="text/css">
+	.slider-link{
+		display: inline-block;
+		color: #FFF !important;
+		border: 2px solid #FFF;
+		padding: 0 .9375rem;
+		line-height: 3.3125rem;
+		text-decoration: none;
+		margin-top: 20px;
+		box-shadow: 2px 2px 4px rgba(0,0,0,0.75);
+	}
+</style>
 @stop
 
 @section('content')
