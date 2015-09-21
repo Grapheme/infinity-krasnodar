@@ -2,6 +2,11 @@
  *  http://grapheme.ru/
  */
  
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	$('.slider-container').addClass('mobile-slider-fix');
+}
+
 var BASIC = BASIC || {};
 
 BASIC.baseURL = window.location.protocol+'//'+window.location.hostname+'/';

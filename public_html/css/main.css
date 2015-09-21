@@ -2601,3 +2601,8 @@ have a fixed width and height (but it's not required).
     page-break-after: avoid;
   }
 }
+
+.mobile-slider-fix {
+  min-height: 60rem;
+}
+

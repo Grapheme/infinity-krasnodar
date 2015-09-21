@@ -1,0 +1,208 @@
+.tool-triangle {
+	position: absolute;
+	//display: none;
+	top: -7rem / @htmlFontSize;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 7.5rem / @htmlFontSize 8rem / @htmlFontSize 7.5rem / @htmlFontSize;
+	border-color: transparent transparent #ffffff transparent;
+	z-index: 4;
+}
+
+.car-tooltip {
+	display: none;
+	position: absolute;
+	z-index: 99;
+	top: 0;
+	color: #000;
+	background: #fff;
+	white-space: nowrap;
+	height: 22rem;
+
+	.left-block {
+		.box-sizing;
+		margin-right: -4rem / @htmlFontSize;
+		display: inline-block;
+		vertical-align: top;
+		border: 1px solid #e0e0e0;
+		border-right: 0;
+		height: 100%;
+		overflow: hidden;
+
+		.car-ul {
+			.list-unstyled;
+			
+			li {
+				position: relative;
+				width: 190rem / @htmlFontSize;
+				border-bottom: 1px solid #e0e0e0;
+
+				&.active {
+					background: #fff;
+					box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+
+					&:after {
+						content: "";
+						position: absolute;
+						height: 100%;
+						width: 1px;
+						background: #fff;
+						top: 0;
+						right: -1px;
+						z-index: 2;
+					}
+				}
+			}
+
+			.car-photo {
+				height: 100rem / @htmlFontSize;
+				width: 100%;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 70% auto;
+			}
+
+			.car-name {
+				padding: 0 30rem / @htmlFontSize;
+				margin-bottom: 25rem / @htmlFontSize;
+			}
+		}
+	}
+
+	.main-blocks {
+		display: inline-block;
+		vertical-align: top;
+		height: 100%;
+	}
+
+	.main-block {
+		.box-sizing;
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		border: 1px solid #e0e0e0;
+		width: 940rem / @htmlFontSize;
+		background-color: #fff;
+		background-position: bottom right;
+		background-repeat: no-repeat;
+		background-size: 65% auto;
+		padding: 30rem / @htmlFontSize 50rem / @htmlFontSize 35rem / @htmlFontSize 50rem / @htmlFontSize;
+		min-height: 100%;
+
+		.car-info-block;
+
+		.cars-instock {
+			.transition(border);
+			color: #aaa;
+			font-size: 14rem / @htmlFontSize;
+			text-decoration: none;
+			margin-top: 17rem / @htmlFontSize;
+			float: right;
+			border-bottom: 1px solid #ccc;
+
+			&:hover {
+				border-color: transparent;
+			}
+		}
+
+		.car-name {
+			span {
+				font-size: 24rem / @htmlFontSize;
+				font-weight: 200;
+			}
+		} 
+
+		.car-info {
+			padding-left: 20rem / @htmlFontSize;
+			width: 320rem / @htmlFontSize;
+			font-size: 14rem / @htmlFontSize;
+			font-weight: 300;
+			line-height: 25rem / @htmlFontSize;
+		}
+
+		.car-btns {
+			position: absolute;
+			bottom: 40rem / @htmlFontSize;
+		}
+
+		.car-link {
+			.transition(border);
+			color: #000;
+			text-decoration: none;
+			border-bottom: 1px solid transparent;
+			font-size: 13rem / @htmlFontSize;
+			text-transform: uppercase;
+			margin-left: 10rem / @htmlFontSize;
+
+			.icon {
+				margin-right: 10rem / @htmlFontSize;
+			}
+
+			&:hover {
+				border-bottom: 1px solid;
+			}
+		}
+	}
+}
+
+.cars-tooltip {
+	.box-sizing;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 99;
+	color: #000;
+	background: #fff;
+	padding: 35rem / @htmlFontSize 35rem / @htmlFontSize 0 35rem / @htmlFontSize;
+	width: 840rem / @htmlFontSize;
+	border: 1px solid #e0e0e0;
+
+	.car-block {
+		margin-bottom: 40rem / @htmlFontSize;
+	}
+
+	.car-type {
+		font-size: 14rem / @htmlFontSize;
+		text-transform: uppercase;
+		padding-left: 20rem / @htmlFontSize;
+		margin-bottom: 10rem / @htmlFontSize;
+	}
+
+	.cars-ul {
+		.list-unstyled;
+
+		li {
+			.transition(opacity);
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			width: 12rem;
+
+			&.fadeOut {
+				opacity: .5;
+			}
+		}
+
+		.car-photo {
+			height: 100rem / @htmlFontSize;
+			width: 100%;
+			background-size: 80% auto;
+			background-position: center bottom;
+			background-repeat: no-repeat;
+		}
+
+		.car-name {
+			padding: 20rem / @htmlFontSize 20rem / @htmlFontSize 40rem / @htmlFontSize;
+			color:  #1c1c1c;
+			font-size: 14px;
+			font-weight: 600;
+
+			span {
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

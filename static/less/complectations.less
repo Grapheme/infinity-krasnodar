@@ -1,0 +1,247 @@
+.complectations {
+	width: 1064rem / @htmlFontSize;
+	margin: 0 auto;
+	padding: 60rem / @htmlFontSize 0 0;
+	color: #000;
+
+	h1 {
+		.us-title;
+	}
+
+	header {		
+		margin: 0 0 37rem / @htmlFontSize;
+
+		button {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
+
+.filter {
+	display: inline-block;
+	font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
+
+	.filter-ul {
+		.list-unstyled;
+		margin-right: 65rem / @htmlFontSize;
+	}
+
+	.filter-li {
+		display: inline-block;
+		margin: 0 18rem / @htmlFontSize 0 0;
+		vertical-align: middle;
+		font-size: 14em / @htmlFontSize;
+
+		a {
+			.typical-link;
+			border: 0 none;
+			border-bottom: 1px dotted;
+			font-weight: 300;
+
+			&.active {
+				border-color: transparent;
+			}
+		}
+	}
+}
+
+.car-list {
+	.list-unstyled;
+
+	.car-item {
+		margin: 0 0 32rem / @htmlFontSize;
+		padding: 0 0 32rem / @htmlFontSize;
+		border-bottom: 1px dotted;
+
+		&:last-child {
+			border: 0 none;
+		}
+
+		.car-head {
+			vertical-align: top;
+			display: inline-block;
+			width: 14.5rem;
+			margin-right: 3rem;
+			font-size: 14em / @htmlFontSize;
+
+			h3 {
+				margin: 0;
+				font-weight: 600;
+			}
+
+			.car-price {
+				margin: 0 0 24px;
+			}
+		}
+		.car-body {
+			vertical-align: top;
+			display: inline-block;
+			width: 784rem / @htmlFontSize;
+
+			.car-links {
+				margin: 0 0 32rem / @htmlFontSize 0;
+				font-size: 13em / @htmlFontSize;
+				text-transform: uppercase;
+
+				a {
+					.transition;
+					margin: 0 34rem / @htmlFontSize 0 0;
+					color: inherit;
+					text-decoration: none;
+					border-bottom: 1px solid transparent;
+
+					&:hover {
+						border-color: #000;
+					}
+				}
+			}
+
+			.car-prop {
+				.list-unstyled;
+				list-style-type: disc;
+				list-style-position: inside;
+				font-size: 14em / @htmlFontSize;
+				line-height: 24em / 14;
+			}
+
+			ul {
+				list-style: initial;
+			}
+		}
+	}
+}
+
+.auto-slider {
+	position: relative;
+	min-height: 550rem / @htmlFontSize;
+
+	.model-fotorama, .color-fotorama {
+		.fotorama__wrap {
+			margin: 0 auto;
+		}
+	}
+
+	.model-fotorama, .color-container {
+		.transition(opacity);
+		opacity: 0;
+
+		&.loaded {
+			opacity: 1;
+		}
+	}
+
+	.model-fotorama, .color-fotorama {
+		background: #f3f3f3;
+	}
+
+	.slider-nav-win {
+		position: relative;
+		height: 112rem / @htmlFontSize;
+		background: #1e1e1c;
+		text-align: center;
+	}
+
+	.fotorama-cont {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		z-index: 1;
+		height: 550rem / @htmlFontSize;
+	}
+
+	.fotorama__nav--thumbs {
+		background: #1e1e1c;
+	}
+
+	.colorView {
+		position: absolute;
+		bottom: 15rem / @htmlFontSize;
+		right: 2.5rem;
+		z-index: 1;
+	}
+
+	.slider-nav {
+		.list-unstyled;
+		height: 100%;
+		display: inline-block;
+
+		.thumb {
+			position: relative;
+			display: inline-block;
+			width: 215rem / @htmlFontSize;
+			height: 100%;
+			background-size: cover;
+			background-position: center center;
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0; left: 0; right: 0; bottom: 0;
+				background: rgba(0, 0, 0, .5);
+			}
+
+			&.active {
+
+				&:before {
+					content: "";
+					position: absolute;
+					top: -15rem / @htmlFontSize;
+					left: 50%;
+					margin-left: -15rem / @htmlFontSize;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 0 15rem / @htmlFontSize 15rem / @htmlFontSize 15rem / @htmlFontSize;
+					border-color: transparent transparent #633e7c transparent;
+				}
+				
+				&:after {
+					background: rgba(0, 0, 0, 0);
+				}
+			}
+		}
+	}
+
+	.slider-window {
+		position: absolute;
+		background: transparent;
+		top: 0;
+		height: 550rem / @htmlFontSize;
+		width: 100%;
+
+		.wrapper {
+			height: 100%;
+		}
+
+		.slider-photo {
+			position: absolute;
+			height: 100%;
+			left: 50%;
+			width: 1290rem / @htmlFontSize;
+			margin: 0 0 0 -1290rem / 2 / @htmlFontSize;
+			background-size: contain;
+			background-position: bottom center;
+			background-repeat: no-repeat;
+		}
+
+		.auto-info {
+			position: absolute;
+			top: 100rem / @htmlFontSize;
+			left: 6.1rem;
+			color: #000;
+			z-index: 2;
+
+			.car-info-block;
+
+			.price {
+				font-size: 23rem / @htmlFontSize;
+				margin: 5rem / @htmlFontSize 0;
+			}
+
+			.drive-btn {
+				margin-top: 1rem;
+			}
+		}
+	}
+}

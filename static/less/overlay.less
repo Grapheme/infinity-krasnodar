@@ -1,0 +1,103 @@
+.overlay {
+	.transition(opacity);
+	position: fixed;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 1000;
+	text-align: center;
+	opacity: 0;
+	z-index: -1;
+	overflow: auto;
+
+	&.active {
+		opacity: 1;
+	}
+
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		width: 0;
+	}
+
+	.pop-window {
+		display: inline-block;
+		text-align: left;
+		vertical-align: middle;
+
+		&.closed {
+			display: none;
+		}
+	}
+
+	.pop-dtest {
+		position: relative;
+		width: 500rem / @htmlFontSize;
+		background: rgba(255, 255, 255, .9);
+		color: #000;
+
+		.js-pop-close {
+			font-style: normal;
+			font-size: 30rem / @htmlFontSize;
+			line-height: 20rem / @htmlFontSize;
+			position: absolute;
+			cursor: pointer;
+			color: #9a9a9a;
+			top: 20rem / @htmlFontSize;
+			right: 20rem / @htmlFontSize;
+		}
+
+		.dtest-in {
+			position: relative;
+			margin: 0 auto;
+			width: 320rem / @htmlFontSize;
+			padding: 20rem / @htmlFontSize 0 80rem / @htmlFontSize;
+		}
+
+		.title {
+			.inf-title;
+			margin-bottom: 40rem / @htmlFontSize;
+		}
+
+		.dtest-input {
+			.box-sizing;
+			font-family: "Open Sans";
+			font-weight: 300;
+			padding: 0 10rem / @htmlFontSize;
+			margin-bottom: 15rem / @htmlFontSize;
+			height: 40rem / @htmlFontSize;
+			width: 100%;
+			background: transparent;
+			border: 1px solid #9f9f9f;
+
+			&::-webkit-input-placeholder {
+				color: #9a9a9a;
+			}
+			&:-moz-placeholder {
+				color: #9a9a9a;
+			}
+		}
+
+		.btn {
+			padding: 0 25rem / @htmlFontSize;
+			height: 55rem / @htmlFontSize;
+			line-height: 55rem / @htmlFontSize;
+		}
+
+		.SumoSelect {
+			width: 100%;
+			margin-bottom: 15rem / @htmlFontSize;
+
+			& > .CaptionCont {
+				.box-sizing;
+				width: 100%;
+				font-weight: 300;
+				line-height: 40rem / @htmlFontSize;
+				height: 40rem / @htmlFontSize;
+				padding: 0 10rem / @htmlFontSize;
+				border-color: #9f9f9f;
+				background: transparent;
+			}
+		}
+	}
+}

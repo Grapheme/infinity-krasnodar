@@ -1,0 +1,227 @@
+.gallery {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+
+
+.gallery-block {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: #222;
+	z-index: 2;
+
+	&.fadeOut {
+		.transform(translateY(100%));
+	}
+
+	&.transition {
+		.transition(all, 1s);
+	}
+
+	&:last-child {
+		.gal-down {
+			display: none;
+		}
+	}
+
+	.title {
+		.inf-title;
+		margin-bottom: 20rem / @htmlFontSize;
+		text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+	}
+
+	.inf-text {
+		text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+	}
+
+	.gallery-info {
+		position: absolute;
+		left: 0;
+		top: 125rem / @htmlFontSize;
+	}
+
+	.gallery-photo {
+		position: absolute;
+		top: 0; left: 0; right: 0; bottom: 0;
+		z-index: -1;
+
+		.gallery-img {
+			height: 100%;
+			width: 100%;
+			background-size: cover;
+			background-position: center center;
+		}
+	}
+
+	.gal-prev {
+		.transition;
+		position: absolute;
+		left: 50rem / @htmlFontSize;
+		top: 50%;
+		width: 30rem / @htmlFontSize;
+		height: 45rem / @htmlFontSize;
+
+		&:before {
+			.transition;
+			content: "";
+			position: absolute;
+			bottom: 50%;
+			left: 0;
+			width: 2rem / @htmlFontSize;
+			height: 50%;
+			background: rgba(255, 255, 255, .65);
+			.transform(rotate(45deg));
+			.tr-origin(0 100%);
+		}
+
+		&:after {
+			.transition;
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 2rem / @htmlFontSize;
+			height: 50%;
+			background: rgba(255, 255, 255, .65);
+			.transform(rotate(-45deg));
+			.tr-origin(100% 0);
+		}
+
+		&:hover {
+			.transform(translateX(-3rem / @htmlFontSize));
+
+			&:after {
+				background: rgba(255, 255, 255, 1);
+				.transform(rotate(-55deg));
+			}
+
+			&:before {
+				background: rgba(255, 255, 255, 1);
+				.transform(rotate(55deg));
+			}
+		}
+	}
+
+	.gal-next {
+		.transition;
+		position: absolute;
+		right: 50rem / @htmlFontSize;
+		top: 50%;
+		width: 30rem / @htmlFontSize;
+		height: 45rem / @htmlFontSize;
+
+		&:before {
+			.transition;
+			content: "";
+			position: absolute;
+			bottom: 50%;
+			right: 0;
+			width: 2rem / @htmlFontSize;
+			height: 50%;
+			background: rgba(255, 255, 255, .65);
+			.transform(rotate(-45deg));
+			.tr-origin(100% 100%);
+		}
+
+		&:after {
+			.transition;
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 2rem / @htmlFontSize;
+			height: 50%;
+			background: rgba(255, 255, 255, .65);
+			.transform(rotate(45deg));
+			.tr-origin(0 0);
+		}
+
+		&:hover {
+			.transform(translateX(3rem / @htmlFontSize));
+
+			&:after {
+				background: rgba(255, 255, 255, 1);
+				.transform(rotate(55deg));
+			}
+
+			&:before {
+				background: rgba(255, 255, 255, 1);
+				.transform(rotate(-55deg));
+			}
+		}
+	}
+
+	.gal-down {
+		.transition(color);
+		cursor: pointer;
+		position: absolute;
+		left: 50%;
+		margin-left: -15rem / @htmlFontSize;
+		bottom: 5%;
+		color: rgba(255, 255, 255, .3);
+		font-size: 3rem;
+		z-index: 2;
+
+		&:hover {
+			color: rgba(255, 255, 255, .75);
+		}
+	}
+
+	.gal-half {
+		position: relative;
+		float: left;
+		width: 50%;
+		height: 50%;
+		background-size: cover;
+		background-position: center center;
+		cursor: pointer;
+
+		&:before {
+			.transition(background);
+			content: "";
+			position: absolute;
+			top: 0; left: 0; right: 0; bottom: 0;
+			background: rgba(0, 0, 0, .5);
+		}
+
+		&:hover {
+			&:before {
+				background: rgba(0, 0, 0, 0);
+			}
+
+			.gal-play {
+				opacity: 0;
+				.transform(scale(2));
+			}
+		}
+
+		.gal-play {
+			.transition;
+			.box-sizing;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -85rem / 2 / @htmlFontSize;
+			margin-left: -85rem / 2 / @htmlFontSize;
+			width: 85rem / @htmlFontSize;
+			height: 85rem / @htmlFontSize;
+			border-radius: 85rem / @htmlFontSize;
+			border: 6rem / @htmlFontSize solid rgba(255, 255, 255, .5);
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -12.5rem / @htmlFontSize;
+				margin-left: -3.5rem / @htmlFontSize;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 12.5rem / @htmlFontSize 0 12.5rem / @htmlFontSize 13rem / @htmlFontSize;
+				border-color: transparent transparent transparent rgba(255, 255, 255, .5);
+			}
+		}
+	}
+}

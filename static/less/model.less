@@ -1,0 +1,52 @@
+.model-sect {
+	background: #000;
+
+	h1 {
+		margin: 0;
+		padding: 120rem / @htmlFontSize 0 64rem / @htmlFontSize;
+
+		font-family: 'MetaPro', sans-serif;
+		font-size: 34.5em / @htmlFontSize;
+		line-height: 37em / 34.5;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+.columns {
+	max-width: 960rem / @htmlFontSize;
+	margin: 0 auto;
+
+	.column-50 {
+		float: left;
+		width: 48%;
+	}
+	.column-100 {
+		clear: both;
+
+		.column-head {
+			height: 442rem / @htmlFontSize;
+		}
+	}
+	.column-left {
+		margin: 0 2% 50rem / @htmlFontSize 0;
+	}
+	.column-right {
+		margin: 0 0 50rem / @htmlFontSize 2%;
+	}
+	.column-head {
+		height: 264rem / @htmlFontSize;
+	}
+	.column-body {
+		h2 {
+			margin: 24rem / @htmlFontSize 0;
+			font-size: 14rem / @htmlFontSize;
+			text-transform: uppercase;
+			line-height: 1.6em;
+			//min-height: 44rem / @htmlFontSize;
+		}
+		.column-desc {
+			font-size: 12rem / @htmlFontSize;
+			line-height: 22rem / @htmlFontSize;
+		}
+	}
+}

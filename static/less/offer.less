@@ -1,0 +1,190 @@
+.top-bg {
+	position: relative;
+
+	.offer-img {
+		height: 600rem / @htmlFontSize;
+		max-height: 90vh;
+		background-size: cover;
+		background-position: center center;
+	}
+
+	header {
+		position: absolute;
+		top: 124rem / @htmlFontSize;
+		left: 78rem / @htmlFontSize;
+		text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+
+		width: 400rem / @htmlFontSize; //317
+
+		h2 {
+			margin: 0 0 16rem / @htmlFontSize;
+
+			font-size: 2rem;
+			font-weight: 300;
+			text-transform: uppercase;
+			margin-bottom: 1.25rem;
+		}
+
+		.desc {
+			font-size: .875rem;
+			font-weight: 300;
+			width: 25.625rem;
+			line-height: 1.25rem;
+		}
+
+	}
+}
+.accessories {
+	header {
+		margin: 0 0 0.1875rem;
+	}
+}
+.buy-offer {
+	header {
+		margin: 0 0 0.1875rem;
+		padding: 51rem / @htmlFontSize 78rem / @htmlFontSize 0;
+		color: #000;
+
+		h2 {
+			margin: 0 0 37rem / @htmlFontSize;
+
+			font-size: 34.5em / @htmlFontSize; 
+			line-height: 37em / 34.5;
+			text-transform: uppercase;
+		}
+		.desc {
+			font-size: 15em / @htmlFontSize;
+			line-height: 21em / 15;
+		}
+	}
+}
+.buy-suboffer {
+	color: #000;
+	padding: 0 78rem / @htmlFontSize;
+
+	h1 {
+		.us-title;
+	}
+
+	h2 {
+		margin: 26rem / @htmlFontSize 0 26rem / @htmlFontSize;
+
+		font-size: 23em / @htmlFontSize;
+		line-height: .95;
+		text-transform: uppercase;
+	}
+}
+.used {
+	header {
+		padding: 0;
+	}
+}
+.cars-filter {
+	margin: 0 0 55rem / @htmlFontSize;
+
+	.SumoSelect {
+		margin-right: 16rem / @htmlFontSize;
+
+		& > .optWrapper > .options > li label {
+			color: #222;
+		}
+	}
+
+	.founded {
+		display: inline-block;
+		vertical-align: middle;
+		float: right;
+		color: #aaa;
+		font-weight: 300;
+
+		span {
+			color: #000;
+		}
+	}
+}
+
+.sub-offers-ul {
+	.list-unstyled;
+	margin: 0 0 61rem / @htmlFontSize;
+
+	.sub-offers-li {
+		.transition;
+		.box-sizing;
+
+		display: inline-block;
+		width: 350rem / @htmlFontSize;
+		height: 515rem / @htmlFontSize;
+		margin: 0 86rem / @htmlFontSize 86rem / @htmlFontSize 0;
+		border: 1px solid #e2e2e2;
+		vertical-align: top;
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+
+		&:hover {
+			border-color: #ababab;
+		}
+
+		.sub-offers-li-head {
+			position: relative;
+			width: 100%;
+			height: 293rem / @htmlFontSize;
+
+			a {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.sub-offers-li-body {
+			padding: 22rem / @htmlFontSize 26rem / @htmlFontSize;
+			color: #000;
+
+			.sub-offers-li-header {
+				margin: 0 0 16rem / @htmlFontSize;
+				font-size: 23em / @htmlFontSize;
+				line-height: 30em / 23;
+				text-decoration: uppercase;
+
+				a { 
+					.transition;
+					text-decoration: none;
+					color: #000;
+					border: none;
+					
+					&:hover {
+						color: lighten(#000, 20%)
+					}
+				}
+			}
+			.sub-offers-li-desc {
+				color: #000;
+			}
+		}
+	}
+}
+
+.chars {
+	h2 {
+		
+	}
+}
+.chars-list {
+	margin: -7rem / @htmlFontSize 0 0;
+
+	dt {
+		float: left;
+		font-size: 15em / @htmlFontSize;
+		line-height: 29em / 15;
+	}
+
+	dd {
+		font-size: 15em / @htmlFontSize;
+		line-height: 29em / 15;
+		font-weight: 600;
+		text-align: right;
+	}
+}
