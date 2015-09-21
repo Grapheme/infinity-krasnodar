@@ -7,6 +7,7 @@ $env = $app->detectEnvironment(array(
     'kdurnev' => array('DobriyMac.local'),
     'az' => array('Acer_5742G'),
     'autoprem' => array('ratio.timeweb.ru'),
+    'kf' => array('Mac-mini-Admin.local'),
     'l24'=> array('l24')
 ));
 $app->bindInstallPaths(require __DIR__.'/paths.php');

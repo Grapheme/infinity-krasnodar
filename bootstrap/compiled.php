@@ -478,7 +478,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
     }
     public static function getBootstrapFile()
     {
-        return '/var/www/infiniti-krasnodar.ru/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
+        return '/Users/admin/Web/infinity-krasnodar/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
     }
     public function startExceptionHandling()
     {
@@ -3393,10 +3393,10 @@ class ErrorHandler
         }
         if ($this->displayErrors && error_reporting() & $level && $this->level & $level) {
             if (!class_exists('Symfony\\Component\\Debug\\Exception\\ContextErrorException')) {
-                require '/var/www/infiniti-krasnodar.ru/vendor/symfony/debug/Symfony/Component/Debug' . '/Exception/ContextErrorException.php';
+                require '/Users/admin/Web/infinity-krasnodar/vendor/symfony/debug/Symfony/Component/Debug' . '/Exception/ContextErrorException.php';
             }
             if (!class_exists('Symfony\\Component\\Debug\\Exception\\FlattenException')) {
-                require '/var/www/infiniti-krasnodar.ru/vendor/symfony/debug/Symfony/Component/Debug' . '/Exception/FlattenException.php';
+                require '/Users/admin/Web/infinity-krasnodar/vendor/symfony/debug/Symfony/Component/Debug' . '/Exception/FlattenException.php';
             }
             if (PHP_VERSION_ID < 50400 && isset($context['GLOBALS']) && is_array($context)) {
                 unset($context['GLOBALS']);
@@ -3409,7 +3409,7 @@ class ErrorHandler
             if (is_array($exceptionHandler) && $exceptionHandler[0] instanceof ExceptionHandler) {
                 $exceptionHandler[0]->handle($exception);
                 if (!class_exists('Symfony\\Component\\Debug\\Exception\\DummyException')) {
-                    require '/var/www/infiniti-krasnodar.ru/vendor/symfony/debug/Symfony/Component/Debug' . '/Exception/DummyException.php';
+                    require '/Users/admin/Web/infinity-krasnodar/vendor/symfony/debug/Symfony/Component/Debug' . '/Exception/DummyException.php';
                 }
                 set_exception_handler(function (\Exception $e) use($exceptionHandler) {
                     if (!$e instanceof DummyException) {
@@ -10682,7 +10682,7 @@ class PrettyPageHandler extends Handler
             return Handler::DONE;
         }
         if (!($resources = $this->getResourcesPath())) {
-            $resources = '/var/www/infiniti-krasnodar.ru/vendor/filp/whoops/src/Whoops/Handler' . '/../Resources';
+            $resources = '/Users/admin/Web/infinity-krasnodar/vendor/filp/whoops/src/Whoops/Handler' . '/../Resources';
         }
         $templateFile = "{$resources}/pretty-template.php";
         $cssFile = "{$resources}/pretty-page.css";
