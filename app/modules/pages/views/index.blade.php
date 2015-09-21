@@ -12,6 +12,8 @@
 		margin-top: 20px;
 		text-shadow: none;
 		/*box-shadow: 2px 2px 4px rgba(0,0,0,0.75);*/
+		-webkit-transition: all 0.2s;
+        transition: all 0.2s;
 	}
 
 	.slider-link:hover {
